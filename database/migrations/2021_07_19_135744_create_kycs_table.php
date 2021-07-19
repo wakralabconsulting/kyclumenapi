@@ -24,7 +24,7 @@ class CreateKycsTable extends Migration
       $table->string('cr_license_no_1');
       $table->string('year_of_incorporation_1');
       $table->string('cr_license_issue_date');
-$table->string('cr_license_expiry_date');
+      $table->string('cr_license_expiry_date');
       $table->string('capital_qar');
       $table->string('legal_entity_identifier_1');
       $table->string('tax_number_1');
