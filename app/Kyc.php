@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kyc extends Model
 {
-
+protected $primaryKey = 'id_kyc';
     /**
      * The attributes that are mass assignable.
      *
