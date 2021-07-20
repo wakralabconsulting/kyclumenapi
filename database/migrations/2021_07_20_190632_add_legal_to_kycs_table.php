@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCountriesTable extends Migration
+class AddLegalToKycsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateCountriesTable extends Migration
      */
     public function up()
     {
-      Schema::create('countries', function (Blueprint $table) {
-      $table->increments('id');
-      $table->string('name');
-      $table->string('continent');
-      $table->string('ISO');
-      $table->string('phone_code');
-      $table->timestamps();
-    });
+      Schema::table('kycs', function (Blueprint $table) {
+          //
+          $table->string('qdb_type');
+      });
     }
 
     /**
@@ -30,6 +26,8 @@ class CreateCountriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('countries');
+        Schema::table('kycs', function (Blueprint $table) {
+            //
+        });
     }
 }
