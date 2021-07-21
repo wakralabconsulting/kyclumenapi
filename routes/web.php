@@ -74,3 +74,27 @@ $router->group(['prefix' => 'api/crm'], function () use ($router) {
 
   $router->put('le/{id}', ['uses' => 'LeController@update']);
 });
+
+$router->group(['prefix' => 'api/crm'], function () use ($router) {
+  $router->get('relatedentities',  ['uses' => 'RelatedentitiesController@showAllRelatedentities']);
+
+  $router->get('relatedentities/{id}', ['uses' => 'RelatedentitiesController@showOneRelatedentities']);
+
+  $router->post('relatedentities', ['uses' => 'RelatedentitiesController@create']);
+
+  $router->delete('relatedentities/{id}', ['uses' => 'RelatedentitiesController@delete']);
+
+  $router->put('relatedentities/{id}', ['uses' => 'RelatedentitiesController@update']);
+});
+
+$router->group(['prefix' => 'api/crm'], function () use ($router) {
+  $router->get('companyrepresentatives',  ['uses' => 'CompanyrepresentativesController@showAllCompanyrepresentatives']);
+
+  $router->get('companyrepresentatives/{id}', ['uses' => 'CompanyrepresentativesController@showOneCompanyrepresentatives']);
+
+  $router->post('companyrepresentatives', ['uses' => 'CompanyrepresentativesController@create']);
+
+  $router->delete('companyrepresentatives/{id}', ['uses' => 'CompanyrepresentativesController@delete']);
+
+  $router->put('companyrepresentatives/{id}', ['uses' => 'CompanyrepresentativesController@update']);
+});

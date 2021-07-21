@@ -17,7 +17,7 @@ class Le extends Model
     ];
 
      protected $fillable = [
-          'qdb_legalentitytype'
+          'qdb_legalentitytype','qdb_formstatus'
       ];
 
     /**

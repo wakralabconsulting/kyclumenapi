@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cr extends Model
+class Relatedentities extends Model
 {
 // protected $primaryKey = 'id_kyc';
     /**
@@ -12,12 +12,8 @@ class Cr extends Model
      *
      * @var array
      */
-     protected $casts = [
-        'crs' => 'array'
-    ];
-
      protected $fillable = [
-          'qdb_typeofcrlicense','qdb_formstatus'
+          'qdb_arerelatedentities', 'qdb_serialno', 'qdb_country', 'qdb_name', 'qdb_crlicenseno', 'qdb_typeofbusiness','qdb_ownership','qdb_banknameofmainaccount','qdb_kyc','qdb_formstatus'
       ];
 
     /**

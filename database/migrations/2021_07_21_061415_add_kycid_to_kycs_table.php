@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ChangeCrsTable extends Migration
+class AddKycidToKycsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class ChangeCrsTable extends Migration
      */
     public function up()
     {
-        //
-        Schema::table('crs', function (Blueprint $table) {
-            $table->json('qdb_typeofcrlicense')->change();
+        Schema::table('kycs', function (Blueprint $table) {
+            //
+            $table->string('qdb_kyc');
         });
     }
 
@@ -26,6 +26,8 @@ class ChangeCrsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('kycs', function (Blueprint $table) {
+            //
+        });
     }
 }
