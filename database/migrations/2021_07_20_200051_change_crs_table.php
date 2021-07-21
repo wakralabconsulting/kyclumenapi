@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ChangeKycsTable extends Migration
+class ChangeCrsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,8 @@ class ChangeKycsTable extends Migration
     public function up()
     {
         //
-        Schema::table('kycs', function (Blueprint $table) {
-            $table->dropColumn('type');
+        Schema::table('crs', function (Blueprint $table) {
+            $table->json('qdb_typeofcrlicense')->change();
         });
     }
 

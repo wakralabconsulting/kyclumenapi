@@ -50,3 +50,27 @@ $router->group(['prefix' => 'api/crm'], function () use ($router) {
 
   $router->put('cities/{id}', ['uses' => 'CitiesController@update']);
 });
+
+$router->group(['prefix' => 'api/crm'], function () use ($router) {
+  $router->get('cr',  ['uses' => 'CrController@showAllCr']);
+
+  $router->get('cr/{id}', ['uses' => 'CrController@showOneCr']);
+
+  $router->post('cr', ['uses' => 'CrController@create']);
+
+  $router->delete('cr/{id}', ['uses' => 'CrController@delete']);
+
+  $router->put('cr/{id}', ['uses' => 'CrController@update']);
+});
+
+$router->group(['prefix' => 'api/crm'], function () use ($router) {
+  $router->get('le',  ['uses' => 'LeController@showAllLe']);
+
+  $router->get('le/{id}', ['uses' => 'LeController@showOneLe']);
+
+  $router->post('le', ['uses' => 'LeController@create']);
+
+  $router->delete('le/{id}', ['uses' => 'LeController@delete']);
+
+  $router->put('le/{id}', ['uses' => 'LeController@update']);
+});
